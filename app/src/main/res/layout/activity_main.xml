@@ -55,25 +55,53 @@
                 style="@style/QuestionsTheme"
                 android:text="3. Which are the names of the founding members of Android Inc.?" />
 
-            <CheckBox
-                android:id="@+id/founder_andy_checkbox"
-                style="@style/AnswersTheme"
-                android:text="Andy Rubin" />
 
-            <CheckBox
-                android:id="@+id/founder_rich_checkbox"
-                style="@style/AnswersTheme"
-                android:text="Rich Miner" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
-            <CheckBox
-                android:id="@+id/founder_nick_checkbox"
-                style="@style/AnswersTheme"
-                android:text="Nick Sears" />
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
 
-            <CheckBox
-                android:id="@+id/founder_chris_checkbox"
-                style="@style/AnswersTheme"
-                android:text="Chris White" />
+                    <CheckBox
+                        android:id="@+id/founder_andy_checkbox"
+                        style="@style/AnswersTheme"
+                        android:padding="5dp"
+                        android:text="Andy Rubin" />
+
+                    <CheckBox
+                        android:id="@+id/founder_rich_checkbox"
+                        style="@style/AnswersTheme"
+                        android:padding="5dp"
+                        android:text="Rich Miner" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <CheckBox
+                        android:id="@+id/founder_nick_checkbox"
+                        style="@style/AnswersTheme"
+                        android:padding="5dp"
+                        android:text="Nick Sears" />
+
+                    <CheckBox
+                        android:id="@+id/founder_chris_checkbox"
+                        style="@style/AnswersTheme"
+                        android:padding="5dp"
+                        android:text="Chris White" />
+
+                </LinearLayout>
+
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/question_four_text_view"
@@ -84,31 +112,32 @@
                 android:id="@+id/android_codename_radio_group"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:checkedButton="@id/codename_radio_marshmallow">
+                android:layout_margin="15dp"
+                android:checkedButton="@id/codename_radio_lollipop">
 
                 <RadioButton
-                    android:id="@+id/codename_radio_marshmallow"
+                    android:id="@+id/codename_radio_lollipop"
                     style="@style/AnswersTheme"
-                    android:text="Marshmallow"
-                    />
+                    android:layout_margin="0dp"
+                    android:text="Lollipop" />
 
                 <RadioButton
                     android:id="@+id/codename_radio_nougat"
                     style="@style/AnswersTheme"
-                    android:text="Nugat"
-                    />
+                    android:layout_margin="0dp"
+                    android:text="Nugat" />
 
                 <RadioButton
                     android:id="@+id/codename_radio_kitkat"
                     style="@style/AnswersTheme"
-                    android:text="KitKat"
-                    />
+                    android:layout_margin="0dp"
+                    android:text="KitKat" />
 
                 <RadioButton
                     android:id="@+id/codename_radio_cupcake"
                     style="@style/AnswersTheme"
-                    android:text="Cupcake"
-                    />
+                    android:layout_margin="0dp"
+                    android:text="Cupcake" />
 
             </RadioGroup>
 
@@ -122,42 +151,44 @@
                 android:id="@+id/android_company_radio_group"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="15dp"
                 android:checkedButton="@id/company_radio_microsoft">
 
                 <RadioButton
                     android:id="@+id/company_radio_microsoft"
                     style="@style/AnswersTheme"
-                    android:text="Microsoft"
-                    />
+                    android:layout_margin="0dp"
+                    android:text="Microsoft" />
 
                 <RadioButton
                     android:id="@+id/company_radio_apple"
                     style="@style/AnswersTheme"
-                    android:text="Apple"
-                    />
+                    android:layout_margin="0dp"
+                    android:text="Apple" />
 
                 <RadioButton
                     android:id="@+id/company_radio_google"
                     style="@style/AnswersTheme"
-                    android:text="Google"
-                    />
+                    android:layout_margin="0dp"
+                    android:text="Google" />
 
                 <RadioButton
                     android:id="@+id/company_radio_nvidia"
                     style="@style/AnswersTheme"
-                    android:text="Nvidia"
-                    />
+                    android:layout_margin="0dp"
+                    android:text="Nvidia" />
 
             </RadioGroup>
+
 
             <Button
                 android:id="@+id/submit_answers_button"
                 style="@style/QuestionsTheme"
                 android:layout_width="wrap_content"
                 android:layout_gravity="center_horizontal"
+                android:onClick="submitQuiz"
                 android:text="Submit"
                 android:textAllCaps="true" />
-
 
         </LinearLayout>
 
