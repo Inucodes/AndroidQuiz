@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-
 
     <ScrollView
         android:layout_width="match_parent"
@@ -59,6 +57,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:baselineAligned="false"
                 android:orientation="horizontal">
 
                 <LinearLayout
@@ -112,35 +111,52 @@
                 android:id="@+id/android_codename_radio_group"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="15dp"
-                android:checkedButton="@id/codename_radio_lollipop">
+                android:checkedButton="@id/codename_radio_lollipop"
+                android:orientation="horizontal">
 
-                <RadioButton
-                    android:id="@+id/codename_radio_lollipop"
-                    style="@style/AnswersTheme"
-                    android:layout_margin="0dp"
-                    android:text="Lollipop" />
+                <RadioGroup
+                    android:id="@+id/codename_radio_group_left"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
 
-                <RadioButton
-                    android:id="@+id/codename_radio_nougat"
-                    style="@style/AnswersTheme"
-                    android:layout_margin="0dp"
-                    android:text="Nugat" />
+                    <RadioButton
+                        android:id="@+id/codename_radio_lollipop"
+                        style="@style/AnswersTheme"
+                        android:onClick="unselectRadioBtnRight"
+                        android:text="Lollipop" />
 
-                <RadioButton
-                    android:id="@+id/codename_radio_kitkat"
-                    style="@style/AnswersTheme"
-                    android:layout_margin="0dp"
-                    android:text="KitKat" />
+                    <RadioButton
+                        android:id="@+id/codename_radio_nougat"
+                        style="@style/AnswersTheme"
+                        android:onClick="unselectRadioBtnRight"
+                        android:text="Nugat" />
 
-                <RadioButton
-                    android:id="@+id/codename_radio_cupcake"
-                    style="@style/AnswersTheme"
-                    android:layout_margin="0dp"
-                    android:text="Cupcake" />
+                </RadioGroup>
+
+                <RadioGroup
+                    android:id="@+id/codename_radio_group_right"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/codename_radio_kitkat"
+                        style="@style/AnswersTheme"
+                        android:onClick="unselectRadioBtnLeft"
+                        android:text="KitKat" />
+
+                    <RadioButton
+                        android:id="@+id/codename_radio_cupcake"
+                        style="@style/AnswersTheme"
+                        android:onClick="unselectRadioBtnLeft"
+                        android:text="Cupcake" />
+
+                </RadioGroup>
 
             </RadioGroup>
-
 
             <TextView
                 android:id="@+id/question_five_text_view"
@@ -191,8 +207,5 @@
                 android:textAllCaps="true" />
 
         </LinearLayout>
-
     </ScrollView>
-
-
 </android.support.constraint.ConstraintLayout>

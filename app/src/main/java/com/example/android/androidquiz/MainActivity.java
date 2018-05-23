@@ -6,10 +6,10 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,9 +17,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-/*
-Method called when the Submit button is clicked
-*/
+    /**
+     * Method called when the Submit button is clicked
+     *
+     * @param view
+     */
 
     public void submitQuiz(View view) {
 
@@ -46,25 +48,57 @@ Method called when the Submit button is clicked
 
     }
 
+    /**
+     * This method "unselects" the right side radio group for question 4
+     *
+     * @param view
+     */
 
-/*
-Method checks answers for questions 2-5
-*/
+    public void unselectRadioBtnRight(View view) {
+
+        RadioGroup radioGroupRight = (RadioGroup) findViewById(R.id.codename_radio_group_right);
+
+        radioGroupRight.clearCheck();
+
+    }
+
+    /**
+     * This method "unselects" the left side radio group for question 4
+     *
+     * @param view
+     */
+
+    public void unselectRadioBtnLeft(View view) {
+
+        RadioGroup radioGroupLeft = (RadioGroup) findViewById(R.id.codename_radio_group_left);
+
+        radioGroupLeft.clearCheck();
+
+    }
+
+    /**
+     * Method checks answers for questions 2-5 and adds points accordingly
+     *
+     * @param points
+     * @return
+     */
 
     private int checkAnswers(int points) {
 
-        // Question 2
+        // Checking answers for question 2
 
         EditText releaseYearEditText = (EditText) findViewById(R.id.release_year_edit_text);
         String releaseYear = releaseYearEditText.getText().toString();
 
         if (releaseYear.equals("2008")) {
 
+            // Input must be 2008 for correct answer, if true +25 points
+
             points = points + 25;
 
         }
 
-        // Question 3
+        // Checking answers for question 3
 
         CheckBox andyCheckbox = (CheckBox) findViewById(R.id.founder_andy_checkbox);
         boolean andyCheckboxState = andyCheckbox.isChecked();
@@ -80,52 +114,65 @@ Method checks answers for questions 2-5
 
         if (andyCheckboxState && nickCheckboxState && richCheckboxState && chrisCheckboxState) {
 
+            // All checkboxes must be checked for correct answer, if true +25 points
+
             points = points + 25;
 
         }
 
-        // Question 4
+        // Checking answers for question 4
 
         RadioButton nugatRadioButton = (RadioButton) findViewById(R.id.codename_radio_nougat);
         boolean nugatCheckboxState = nugatRadioButton.isChecked();
 
         if (nugatCheckboxState) {
 
+            // Only Nugat is the correct answer, if true +25 points
+
             points = points + 25;
 
         }
 
-        // Question 5
+        // Checking answers for question 5
 
         RadioButton googleRadioButton = (RadioButton) findViewById(R.id.company_radio_google);
         boolean googleCheckboxState = googleRadioButton.isChecked();
 
         if (googleCheckboxState) {
 
+            // Only Google is the correct answer, if true +25 points
+
             points = points + 25;
 
         }
 
-        return points;
+        return points; // returning the final points value
     }
 
-
-
-/*
-Method shows the result of the quiz
-*/
+    /**
+     * Method shows the result of the quiz
+     *
+     * @param points
+     * @param name
+     */
 
     public void showPoints(int points, String name) {
 
         if (points == 0) {
 
+            // Sad toast for 0 points :(
+
             Toast.makeText(this, "Sorry, but no points for you " + name + " :(", Toast.LENGTH_SHORT).show();
 
         } else if (points == 100) {
 
+            // Supper excited toast for max 100 points!
+
             Toast.makeText(this, "WOW! Congratulations " + name + "! Everything is correct! You have won all " + points + " points!", Toast.LENGTH_SHORT).show();
 
         } else {
+
+            // Happy toast for any points above 0
 
             Toast.makeText(this, "Congratulations " + name + "! You have won " + points + " points!", Toast.LENGTH_SHORT).show();
 
