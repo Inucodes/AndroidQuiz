@@ -6,6 +6,7 @@
     tools:context=".MainActivity">
 
     <ScrollView
+        android:id="@+id/main_scroll_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -19,39 +20,39 @@
                 android:layout_width="wrap_content"
                 android:layout_height="180dp"
                 android:layout_gravity="center_horizontal"
-                android:contentDescription="The logo of the quiz app"
+                android:contentDescription="@string/logo_description"
                 android:padding="10dp"
                 android:src="@drawable/quiz_logo" />
 
             <TextView
                 android:id="@+id/question_one_text_view"
                 style="@style/QuestionsTheme"
-                android:text="1. What is your name?" />
+                android:text="@string/question_one" />
 
             <EditText
                 android:id="@+id/name_edit_text"
                 style="@style/AnswersTheme"
-                android:hint="Name"
+                android:hint="@string/name"
                 android:inputType="textCapWords" />
 
 
             <TextView
                 android:id="@+id/question_two_text_view"
                 style="@style/QuestionsTheme"
-                android:text="2. The first commercial Android version was released in:" />
+                android:text="@string/question_two" />
 
             <EditText
                 android:id="@+id/release_year_edit_text"
                 style="@style/AnswersTheme"
                 android:digits="0123456789."
-                android:hint="Year"
+                android:hint="@string/year"
                 android:inputType="numberDecimal"
                 android:maxLength="4" />
 
             <TextView
                 android:id="@+id/question_three_text_view"
                 style="@style/QuestionsTheme"
-                android:text="3. Which are the names of the founding members of Android Inc.?" />
+                android:text="@string/question_three" />
 
 
             <LinearLayout
@@ -70,13 +71,13 @@
                         android:id="@+id/founder_andy_checkbox"
                         style="@style/AnswersTheme"
                         android:padding="5dp"
-                        android:text="Andy Rubin" />
+                        android:text="@string/andy" />
 
                     <CheckBox
                         android:id="@+id/founder_rich_checkbox"
                         style="@style/AnswersTheme"
                         android:padding="5dp"
-                        android:text="Rich Miner" />
+                        android:text="@string/rich" />
 
                 </LinearLayout>
 
@@ -90,13 +91,13 @@
                         android:id="@+id/founder_nick_checkbox"
                         style="@style/AnswersTheme"
                         android:padding="5dp"
-                        android:text="Nick Sears" />
+                        android:text="@string/nick" />
 
                     <CheckBox
                         android:id="@+id/founder_chris_checkbox"
                         style="@style/AnswersTheme"
                         android:padding="5dp"
-                        android:text="Chris White" />
+                        android:text="@string/chris" />
 
                 </LinearLayout>
 
@@ -105,7 +106,7 @@
             <TextView
                 android:id="@+id/question_four_text_view"
                 style="@style/QuestionsTheme"
-                android:text="4. Which is the correct codename for Android version 7.0?" />
+                android:text="@string/question_four" />
 
             <RadioGroup
                 android:id="@+id/android_codename_radio_group"
@@ -125,13 +126,13 @@
                         android:id="@+id/codename_radio_lollipop"
                         style="@style/AnswersTheme"
                         android:onClick="unselectRadioBtnRight"
-                        android:text="Lollipop" />
+                        android:text="@string/lollipop" />
 
                     <RadioButton
                         android:id="@+id/codename_radio_nougat"
                         style="@style/AnswersTheme"
                         android:onClick="unselectRadioBtnRight"
-                        android:text="Nugat" />
+                        android:text="@string/nugat" />
 
                 </RadioGroup>
 
@@ -146,13 +147,13 @@
                         android:id="@+id/codename_radio_kitkat"
                         style="@style/AnswersTheme"
                         android:onClick="unselectRadioBtnLeft"
-                        android:text="KitKat" />
+                        android:text="@string/kitkat" />
 
                     <RadioButton
                         android:id="@+id/codename_radio_cupcake"
                         style="@style/AnswersTheme"
                         android:onClick="unselectRadioBtnLeft"
-                        android:text="Cupcake" />
+                        android:text="@string/cupcake" />
 
                 </RadioGroup>
 
@@ -161,7 +162,7 @@
             <TextView
                 android:id="@+id/question_five_text_view"
                 style="@style/QuestionsTheme"
-                android:text="5. Which company develops Android?" />
+                android:text="@string/question_five" />
 
             <RadioGroup
                 android:id="@+id/android_company_radio_group"
@@ -174,25 +175,25 @@
                     android:id="@+id/company_radio_microsoft"
                     style="@style/AnswersTheme"
                     android:layout_margin="0dp"
-                    android:text="Microsoft" />
+                    android:text="@string/microsoft" />
 
                 <RadioButton
                     android:id="@+id/company_radio_apple"
                     style="@style/AnswersTheme"
                     android:layout_margin="0dp"
-                    android:text="Apple" />
+                    android:text="@string/apple" />
 
                 <RadioButton
                     android:id="@+id/company_radio_google"
                     style="@style/AnswersTheme"
                     android:layout_margin="0dp"
-                    android:text="Google" />
+                    android:text="@string/google" />
 
                 <RadioButton
                     android:id="@+id/company_radio_nvidia"
                     style="@style/AnswersTheme"
                     android:layout_margin="0dp"
-                    android:text="Nvidia" />
+                    android:text="@string/nvidia" />
 
             </RadioGroup>
 
@@ -203,7 +204,7 @@
                 android:layout_width="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:onClick="submitQuiz"
-                android:text="Submit"
+                android:text="@string/submit"
                 android:textAllCaps="true" />
 
         </LinearLayout>

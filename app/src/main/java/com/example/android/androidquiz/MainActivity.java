@@ -7,6 +7,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.ScrollView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -26,23 +27,35 @@ public class MainActivity extends AppCompatActivity {
     public void submitQuiz(View view) {
 
         int points = 0; // initial number of points
+        ScrollView mainScrollView = (ScrollView) findViewById(R.id.main_scroll_view);
+        // calling the main scroll view to scroll it back to 0, 0 if needed
 
         EditText nameEditText = (EditText) findViewById(R.id.name_edit_text);
+        // calling edit text to check if there is a name
+
+        String pleaseInputName = getString(R.string.please_input_name);
+        // string for input name toast
+
         String name = nameEditText.getText().toString();
 
-        // checks if there is text in the name field
 
-        if (name.equals(""))
 
-        // shows an error when you try to submit without the name
+        if (name.equals(""))  // checks if there is text in the name field
 
         {
-            Toast.makeText(this, "Please input your name", Toast.LENGTH_SHORT).show();
+
+            Toast.makeText(this, pleaseInputName, Toast.LENGTH_SHORT).show();
+            // shows an error when you try to submit without the name
+
+            mainScrollView.scrollTo(0, 0);
+            nameEditText.requestFocus();
+            // scrolls back to the name field
+
 
         } else {
 
-            points = checkAnswers(points);
-            showPoints(points, name);
+            points = checkAnswers(points); // checks points
+            showPoints(points, name); // shows result message
 
         }
 
@@ -79,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Method checks answers for questions 2-5 and adds points accordingly
      *
-     * @param points
+     * @param points number of points from the quiz questions
      * @return
      */
 
@@ -160,21 +173,24 @@ public class MainActivity extends AppCompatActivity {
 
         if (points == 0) {
 
+            String sadToast = getString(R.string.no_points) + name + getString(R.string.sad_face);
             // Sad toast for 0 points :(
 
-            Toast.makeText(this, "Sorry, but no points for you " + name + " :(", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, sadToast , Toast.LENGTH_SHORT).show();
 
         } else if (points == 100) {
 
-            // Supper excited toast for max 100 points!
+           String supeExcitedToast = getString(R.string.congratulations) + name + getString(R.string.won_all) + points + getString(R.string.points);
+           // Supper excited toast for max 100 points!
 
-            Toast.makeText(this, "WOW! Congratulations " + name + "! Everything is correct! You have won all " + points + " points!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, supeExcitedToast, Toast.LENGTH_SHORT).show();
 
         } else {
 
-            // Happy toast for any points above 0
+           String happyToast = getString(R.string.simple_congratulations) + name + getString(R.string.you_won) + points + getString(R.string.points);
+           // Happy toast for any points above 0
 
-            Toast.makeText(this, "Congratulations " + name + "! You have won " + points + " points!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,happyToast , Toast.LENGTH_SHORT).show();
 
         }
 

@@ -1,3 +1,32 @@
 <resources>
     <string name="app_name">Android Quiz</string>
+    <string name="question_four">4. Which is the correct codename for Android version 7.0?</string>
+    <string name="lollipop">Lollipop</string>
+    <string name="nugat">Nugat</string>
+    <string name="kitkat">KitKat</string>
+    <string name="cupcake">Cupcake</string>
+    <string name="logo_description">The logo of the quiz app</string>
+    <string name="question_one">1. What is your name?</string>
+    <string name="name">Name</string>
+    <string name="question_two">2. The first commercial Android version was released in:</string>
+    <string name="year">Year</string>
+    <string name="question_three">3. Which are the names of the founding members of Android Inc.?</string>
+    <string name="andy">Andy Rubin</string>
+    <string name="rich">Rich Miner</string>
+    <string name="nick">Nick Sears</string>
+    <string name="chris">Chris White</string>
+    <string name="question_five">5. Which company develops Android?</string>
+    <string name="microsoft">Microsoft</string>
+    <string name="apple">Apple</string>
+    <string name="google">Google</string>
+    <string name="nvidia">Nvidia</string>
+    <string name="submit">Submit</string>
+    <string name="please_input_name">Please input your name</string>
+    <string name="no_points">Sorry, but no points for you \</string>
+    <string name="sad_face">\ :(</string>
+    <string name="congratulations">WOW! Congratulations \</string>
+    <string name="won_all">! Everything is correct! You have won all \</string>
+    <string name="points">\ points!</string>
+    <string name="simple_congratulations">Congratulations \</string>
+    <string name="you_won">! You have won \</string>
 </resources>

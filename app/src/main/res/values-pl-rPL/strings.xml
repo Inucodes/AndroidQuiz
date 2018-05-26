@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Android Quiz</string>
+    <string name="question_four">4. Jaka jest nazwa kodowa Androida w wersji 7.0?</string>
+    <string name="question_one">1. Jak masz na imię?</string>
+    <string name="name">Imię</string>
+    <string name="question_two">2. Pierwsza komercyjna wersja Androida została opublikowana w roku:</string>
+    <string name="year">Rok</string>
+    <string name="question_three">3. Jak nazywają sie założyciele firmy Android Inc.?</string>
+    <string name="question_five">5. Która firma rozwija obecnie Androida?</string>
+    <string name="submit">Zatwierdź</string>
+    <string name="please_input_name">Proszę wprowadzić imię</string>
+    <string name="no_points">Przykro nam, ale nie mamy dla Ciebie żadnych punktów \</string>
+    <string name="congratulations">WOW! Gratulacje \</string>
+    <string name="won_all">! Wszystko rozwiązane prawidłowo! Zdobyto wszystkie "</string>
+    <string name="points">\ punktów!</string>
+    <string name="simple_congratulations">Gratulacje \</string>
+    <string name="you_won">! Wygrałeś \</string>
+</resources>
